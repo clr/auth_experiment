@@ -1,0 +1,13 @@
+<p>
+  <b>Username:</b>
+  <%=h @authentication.username %>
+</p>
+
+<p>
+  <b>Password:</b>
+  <%=h @authentication.password %>
+</p>
+
+
+<%= link_to 'Edit', edit_authentication_path(@authentication) %> |
+<%= link_to 'Back', authentications_path %>

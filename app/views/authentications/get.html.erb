@@ -1,0 +1,29 @@
+<h1>Authentication</h1>
+<%= current_user if logged_in? %>
+
+<%# auth_form_tag :url => authentication_path, :method => 'post' do |f| %>
+<form action="/authentication" method="post" onsubmit="$.ajax( { url:'/authentication', type:'GET', dataType:'script', username:$( '#username' ).val(), password:$( '#password' ).val(), beforeSend:function( req ){ req.setRequestHeader( 'Accept', 'text/javascript, text/html, application/xml, text/xml, */*' ); } } ); return false ">
+<!--
+
+alert( $( '#username' ).val() + $( '#password' ).val() ); 
+
+
+$.getScript( '/authentication', function( data, textStatus ){ $.ajax( { url:'/authentication', type:'POST', dataType:'script', username:$( '#username' ).val(), password:$( '#password' ).val() } ) } );
+
+var auth = 'Basic ' + Base64.encode( 'test:test' ); alert( auth ); $.ajax({ type: 'GET', url: '/authentication', error: function(){   $.ajax({ type: 'POST', url: '/authentication', beforeSend: function(req) { req.setRequestHeader( 'Authorization', auth ); }, success: function(msg){ alert( 'Result: ' + msg.text ); }, error: function (XMLHttpRequest, textStatus, errorThrown) { alert('Error ' + textStatus + ' -- ' + errorThrown); } })   };  return false;
+-->
+  <p>
+    <%= label_tag 'username' %><br />
+    <%= text_field_tag :username %>
+  </p>
+  <p>
+    <%= label_tag 'password' %><br />
+    <%= password_field_tag  :password %>
+  </p>
+  <p>
+    <%= submit_tag "authenticate" %>
+  </p>
+</form>
+<%# end %>
+
+

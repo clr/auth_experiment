@@ -1,0 +1,7 @@
+case PROBLEM
+
+when "I always get the ugly browser authentication prompt no matter what happens."
+  <<-ANSWER Are you sure you have javascript included in the template?  That's <%= javascript_include_tag :defaults %> in the header for Prototype.
+  ANSWER
+
+end

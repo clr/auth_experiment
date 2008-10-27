@@ -1,0 +1,2 @@
+* Build Test::Unit and RSpec generators.
+* Support DIGEST AUTH in addition to the current BASIC AUTH.

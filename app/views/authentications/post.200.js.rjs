@@ -1,0 +1,1 @@
+page.alert( "You are logged in as #{ current_user }" )

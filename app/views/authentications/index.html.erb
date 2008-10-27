@@ -1,0 +1,22 @@
+<h1>Listing authentications</h1>
+
+<table>
+  <tr>
+    <th>Username</th>
+    <th>Password</th>
+  </tr>
+
+<% for authentication in @authentications %>
+  <tr>
+    <td><%=h authentication.username %></td>
+    <td><%=h authentication.password %></td>
+    <td><%= link_to 'Show', authentication %></td>
+    <td><%= link_to 'Edit', edit_authentication_path(authentication) %></td>
+    <td><%= link_to 'Destroy', authentication, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New authentication', new_authentication_path %>
